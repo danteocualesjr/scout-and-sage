@@ -56,7 +56,7 @@ export function HeroSection() {
         </div>
 
         <div className="hero-rise hero-delay-2 relative mx-auto w-full max-w-[690px]">
-          <div className="absolute -left-5 top-16 z-20 hidden -rotate-6 rounded-full bg-[#e6653f] px-5 py-3 text-sm font-bold text-white shadow-xl md:block">
+          <div className="absolute -top-5 left-8 z-20 hidden -rotate-6 rounded-full bg-[#e6653f] px-5 py-3 text-sm font-bold text-white shadow-xl md:block">
             94% match
           </div>
           <div className="overflow-hidden rounded-[30px] border border-[#12211c]/15 bg-[#fffdf8] shadow-[0_35px_80px_-25px_rgba(18,33,28,0.28)]">
