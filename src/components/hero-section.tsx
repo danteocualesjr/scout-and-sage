@@ -63,11 +63,14 @@ export function HeroSection() {
             </Link>
           </div>
 
-          <dl className="hero-rise hero-delay-3 mt-12 grid grid-cols-3 gap-4 border-t border-[#12211c]/15 pt-5">
+          <dl className="hero-rise hero-delay-3 mt-12 grid grid-cols-3 gap-2 sm:gap-3">
             {perks.map((perk) => (
-              <div key={perk.label}>
+              <div
+                key={perk.label}
+                className="rounded-2xl border border-[#12211c]/10 bg-[#fffdf8]/80 px-3 py-4 text-center shadow-[0_12px_30px_-22px_rgba(18,33,28,0.35)] sm:px-4 sm:text-left"
+              >
                 <dt className="text-lg font-bold text-[#12211c] md:text-xl">{perk.value}</dt>
-                <dd className="mt-1 text-xs leading-5 text-[#66716c]">{perk.label}</dd>
+                <dd className="mt-1 text-[11px] leading-4 text-[#66716c] sm:text-xs sm:leading-5">{perk.label}</dd>
               </div>
             ))}
           </dl>
@@ -78,13 +81,20 @@ export function HeroSection() {
             94% match
           </div>
           <div className="overflow-hidden rounded-[30px] border border-[#12211c]/15 bg-[#fffdf8] shadow-[0_35px_80px_-25px_rgba(18,33,28,0.28)] transition-transform duration-500 lg:hover:-rotate-1 lg:hover:scale-[1.01]">
-            <div className="flex items-center justify-between border-b border-[#12211c]/10 px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#12211c]/10 bg-[#faf8f3] px-5 py-4">
+              <div className="flex items-center gap-2" aria-hidden>
+                <span className="h-2.5 w-2.5 rounded-full bg-[#e6653f]/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#f4c9b9]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#b6d8c8]" />
+              </div>
+              <div className="flex flex-1 items-center justify-center gap-3 sm:justify-start sm:pl-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#15382e] text-xs font-bold text-white">SC</div>
                 <div>
                   <p className="text-sm font-bold">Scout call</p>
                   <p className="text-xs text-[#66716c]">Career brief · 08:42</p>
                 </div>
+              </div>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-[#47665a]">
                 <span className="h-2 w-2 animate-[pulse-ring_2s_infinite] rounded-full bg-[#e6653f]" />

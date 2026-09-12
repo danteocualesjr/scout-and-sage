@@ -45,7 +45,7 @@ export function SiteHeader() {
             </summary>
             <nav
               aria-label="Mobile navigation"
-              className="absolute right-0 top-12 w-56 overflow-hidden rounded-[18px] border border-[#12211c]/10 bg-[#fffdf8] p-2 shadow-[0_20px_50px_-20px_rgba(18,33,28,0.4)]"
+              className="absolute right-0 top-12 w-56 overflow-hidden rounded-[18px] border border-[#12211c]/10 bg-[#fffdf8]/95 p-2 shadow-[0_20px_50px_-20px_rgba(18,33,28,0.4)] backdrop-blur-md"
             >
               {nav.map((item) => (
                 <Link

@@ -179,6 +179,12 @@ button:focus-visible {
   display: none;
 }
 
+.surface-card {
+  border: 1px solid rgb(18 33 28 / 0.1);
+  background: rgb(255 253 248 / 0.92);
+  box-shadow: 0 18px 45px -30px rgb(18 33 28 / 0.35);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
