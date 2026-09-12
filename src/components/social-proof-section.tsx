@@ -53,7 +53,13 @@ export function SocialProofSection() {
       </div>
 
       <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-12 md:grid-cols-[1.3fr_0.7fr] md:items-end md:px-10 md:py-20">
-        <blockquote className="display-text max-w-4xl text-4xl leading-[1.05] text-[#12211c] md:text-6xl">
+        <blockquote className="display-text relative max-w-4xl text-4xl leading-[1.05] text-[#12211c] md:text-6xl">
+          <span
+            className="pointer-events-none absolute -left-2 -top-10 font-serif text-7xl leading-none text-[#e6653f]/20 md:-left-6 md:-top-14 md:text-8xl"
+            aria-hidden
+          >
+            “
+          </span>
           “Scout didn’t send me more jobs. It found the{" "}
           <span className="italic text-[#e6653f]">one conversation</span> that
           changed my year.”

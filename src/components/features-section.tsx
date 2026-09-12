@@ -168,8 +168,12 @@ function FeaturePanel({ type }: { type: string }) {
 
 export function FeaturesSection() {
   return (
-    <section className="border-b border-[#12211c]/10 bg-[#fffdf8] py-24 md:py-32">
-      <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+    <section className="relative overflow-hidden border-b border-[#12211c]/10 bg-[#fffdf8] py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-[#b6d8c8]/25 blur-3xl"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div className="flex items-start gap-4">
             <span className="mt-1 hidden h-16 w-px bg-[#e6653f]/50 md:block" aria-hidden />
@@ -180,7 +184,13 @@ export function FeaturesSection() {
           </h2>
         </div>
 
-        <div className="mt-14 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <p className="text-sm font-medium text-[#66716c]">Live matches from Scout’s scan</p>
+          <p className="hidden text-xs font-semibold uppercase tracking-wider text-[#e6653f] sm:block">
+            Swipe →
+          </p>
+        </div>
+        <div className="mt-4 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
           {jobs.map((job) => (
             <article
               key={job.title}
@@ -200,9 +210,9 @@ export function FeaturesSection() {
           {showcases.map((item, i) => (
             <div
               key={item.title}
-              className={`grid items-center gap-10 border-t border-[#12211c]/12 py-16 md:grid-cols-2 md:gap-20 md:py-24 ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
+              className={`group grid items-center gap-10 border-t border-[#12211c]/12 py-16 md:grid-cols-2 md:gap-20 md:py-24 ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
             >
-              <div>
+              <div className="transition-transform duration-300 md:group-hover:-translate-y-0.5">
                 <p className="eyebrow text-[#e6653f]">0{i + 1} / 06</p>
                 <h3 className="display-text mt-4 text-4xl leading-tight text-[#12211c] md:text-5xl">{item.title}</h3>
                 <p className="mt-5 max-w-lg text-base leading-7 text-[#58655f] md:text-lg md:leading-8">{item.body}</p>
@@ -214,7 +224,7 @@ export function FeaturesSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-8 border-y border-[#12211c]/15 py-10 md:flex-row md:items-center">
+        <div className="surface-card mt-8 flex flex-col items-start justify-between gap-8 rounded-[28px] px-6 py-10 md:flex-row md:items-center md:px-10">
           <h2 className="display-text max-w-2xl text-3xl text-[#12211c] md:text-4xl">
             Your best role should find you, too.
           </h2>
