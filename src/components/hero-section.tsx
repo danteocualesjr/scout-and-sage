@@ -1,95 +1,112 @@
 import Link from "next/link";
 
 const perks = [
-  { icon: "⚡", label: "Jobs in 10 minutes" },
-  { icon: "$", label: "Free" },
-  { icon: "👤", label: "You control sharing" },
+  { value: "15M", label: "roles scanned daily" },
+  { value: "10 min", label: "to first matches" },
+  { value: "$0", label: "always free for talent" },
 ];
 
 export function HeroSection() {
   return (
-    <section id="candidates" className="border-b border-[#eee] bg-[#fafafa]">
-      <div className="mx-auto max-w-6xl px-5 pb-16 pt-10 md:px-8 md:pb-20 md:pt-14">
-        <Link
-          href="#announcement"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-[#555] transition-colors hover:text-[#0a0a0a]"
-        >
-          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-xs text-emerald-700">
-            ✓
-          </span>
-          $18m seed round announcement
-          <span aria-hidden>→</span>
-        </Link>
+    <section id="candidates" className="paper-grid relative overflow-hidden border-b border-[#12211c]/10 bg-[#f5f2ea]">
+      <div className="pointer-events-none absolute -right-28 top-24 h-72 w-72 rounded-full bg-[#b6d8c8]/50 blur-3xl" />
+      <div className="mx-auto grid min-h-[calc(100svh-72px)] max-w-[1280px] items-center gap-12 px-5 py-14 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-20">
+        <div className="relative z-10">
+          <Link
+            href="#announcement"
+            className="eyebrow inline-flex min-h-11 items-center gap-3 text-[#52635b] transition-colors hover:text-[#12211c]"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#e6653f]" />
+            Built for ambitious careers
+            <span aria-hidden>↗</span>
+          </Link>
 
-        <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-[3.25rem]">
-            Meet Scout
+          <h1 className="display-text mt-5 max-w-[680px] text-[clamp(4.25rem,8vw,7.75rem)] leading-[0.84] text-[#12211c]">
+            Your next move,
+            <span className="block italic text-[#e6653f]">found.</span>
           </h1>
-          <p className="mt-4 text-xl text-[#444] md:text-2xl md:leading-snug">
-            An AI agent that finds your next job and helps you land it
-          </p>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-[#666] md:text-lg">
-            Scout scans 15 million jobs daily and introduces you directly to
-            hiring managers.{" "}
-            <Link href="#signup" className="font-semibold text-[#0a0a0a] underline-offset-2 hover:underline">
-              Join 240,000+ professionals today →
-            </Link>
+          <p className="mt-8 max-w-lg text-lg leading-8 text-[#46534d] md:text-xl">
+            Scout searches every corner of the market, learns what matters to
+            you, and opens doors to hiring managers before roles get crowded.
           </p>
 
-          <ul className="mt-8 flex flex-wrap gap-6 text-sm text-[#555]">
-            {perks.map((perk) => (
-              <li key={perk.label} className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-sm">
-                  {perk.icon}
-                </span>
-                {perk.label}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#signup"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#0a0a0a] px-8 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="button-lift inline-flex min-h-14 items-center justify-center rounded-full bg-[#12211c] px-7 text-[15px] font-semibold text-[#fffdf8]"
             >
-              Sign up to Scout
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-xs">
-                ↗
-              </span>
+              Start with Scout <span className="ml-4" aria-hidden>→</span>
             </Link>
             <Link
               href="#companies"
-              className="text-sm font-medium text-[#444] hover:text-[#0a0a0a]"
+              className="inline-flex min-h-14 items-center justify-center px-6 text-[15px] font-semibold text-[#30453c] underline decoration-[#e6653f]/40 underline-offset-4 transition-colors hover:text-[#e6653f]"
             >
-              Hiring? Meet Sage <span aria-hidden>🙂</span>
+              Hiring? Meet Sage
             </Link>
           </div>
+
+          <dl className="mt-12 grid grid-cols-3 gap-4 border-t border-[#12211c]/15 pt-5">
+            {perks.map((perk) => (
+              <div key={perk.label}>
+                <dt className="text-lg font-bold text-[#12211c] md:text-xl">{perk.value}</dt>
+                <dd className="mt-1 text-xs leading-5 text-[#66716c]">{perk.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <div className="relative mt-12 overflow-hidden rounded-2xl border border-[#e8e8e8] bg-[#111] shadow-2xl shadow-black/10">
-          <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]">
-            <div className="flex h-full flex-col items-center justify-center gap-4 p-8 text-center text-white">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/20">
-                <span className="text-3xl">🎙</span>
+        <div className="relative mx-auto w-full max-w-[690px]">
+          <div className="absolute -left-5 top-16 z-20 hidden -rotate-6 rounded-full bg-[#e6653f] px-5 py-3 text-sm font-bold text-white shadow-xl md:block">
+            94% match
+          </div>
+          <div className="overflow-hidden rounded-[30px] border border-[#12211c]/15 bg-[#fffdf8] shadow-[0_35px_80px_-25px_rgba(18,33,28,0.28)]">
+            <div className="flex items-center justify-between border-b border-[#12211c]/10 px-5 py-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#15382e] text-xs font-bold text-white">SC</div>
+                <div>
+                  <p className="text-sm font-bold">Scout call</p>
+                  <p className="text-xs text-[#66716c]">Career brief · 08:42</p>
+                </div>
               </div>
-              <p className="text-lg font-medium">Talk to Scout — live career coaching</p>
-              <p className="max-w-md text-sm text-white/70">
-                Demo preview — your conversation helps Scout learn what great looks like for your next role.
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#47665a]">
+                <span className="h-2 w-2 animate-[pulse-ring_2s_infinite] rounded-full bg-[#e6653f]" />
+                Live
+              </div>
+            </div>
+            <div className="bg-[#15382e] p-5 text-[#fffdf8] sm:p-7">
+              <p className="eyebrow text-[#b6d8c8]">Scout is listening</p>
+              <p className="display-text mt-4 max-w-lg text-3xl leading-tight sm:text-4xl">
+                “What kind of work would make Monday feel worth it?”
               </p>
-              <button
-                type="button"
-                className="mt-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm backdrop-blur-sm"
-              >
-                Tap to unmute
-              </button>
+              <div className="mt-8 flex h-12 items-end gap-1.5" aria-hidden="true">
+                {[20, 34, 18, 44, 28, 50, 32, 22, 42, 58, 37, 48, 25, 36, 20, 31, 17, 27].map((height, index) => (
+                  <span
+                    key={`${height}-${index}`}
+                    className="w-1.5 rounded-full bg-[#b6d8c8]"
+                    style={{ height: `${height}%`, opacity: 0.45 + (index % 4) * 0.15 }}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-3 p-4 sm:grid-cols-2 sm:p-5">
+              <div className="rounded-[18px] bg-[#edf2ed] p-4">
+                <p className="eyebrow text-[#66716c]">Top signal</p>
+                <p className="mt-2 text-sm font-semibold">Small team, real ownership</p>
+                <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-[#d8e0da]">
+                  <div className="h-full w-[88%] rounded-full bg-[#e6653f]" />
+                </div>
+              </div>
+              <div className="rounded-[18px] bg-[#f7e8e1] p-4">
+                <p className="eyebrow text-[#8b5b4d]">Next step</p>
+                <p className="mt-2 text-sm font-semibold">7 high-fit roles ready</p>
+                <p className="mt-3 text-xs text-[#76584e]">First introductions today →</p>
+              </div>
             </div>
           </div>
-          <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-black/60 px-4 py-2 text-xs text-white backdrop-blur-md">
-            <span>Pause</span>
-            <span className="text-white/40">|</span>
-            <span>CC</span>
-            <span className="text-white/40">|</span>
-            <span>1×</span>
+          <div className="absolute -bottom-8 -right-4 hidden max-w-[220px] animate-[float_5s_ease-in-out_infinite] rounded-[20px] border border-[#12211c]/10 bg-[#fffdf8] p-4 shadow-xl md:block">
+            <p className="eyebrow text-[#66716c]">New introduction</p>
+            <p className="mt-2 text-sm font-bold">Founding Engineer</p>
+            <p className="mt-1 text-xs text-[#66716c]">Series A · Remote · $220k</p>
           </div>
         </div>
       </div>
