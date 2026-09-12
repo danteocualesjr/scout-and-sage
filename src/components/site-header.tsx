@@ -13,7 +13,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-5 md:px-10">
         <Link
           href="/"
-          className="display-text group flex items-center gap-2 text-[1.75rem] text-[#12211c]"
+          className="display-text group flex min-h-11 items-center gap-2 text-[1.75rem] text-[#12211c]"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#12211c] text-[11px] font-sans font-bold tracking-normal transition-colors group-hover:bg-[#12211c] group-hover:text-[#f5f2ea]">
             S·S

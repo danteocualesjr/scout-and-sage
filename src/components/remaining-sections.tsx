@@ -274,7 +274,7 @@ export function SiteFooter() {
           </div>
           <div className="flex flex-wrap gap-5 text-sm text-white/60">
             {["X", "LinkedIn", "Instagram", "TikTok"].map((s) => (
-              <Link key={s} href="#" className="min-h-11 py-3 transition-colors hover:text-white">
+              <Link key={s} href="#" className="inline-flex min-h-11 min-w-11 items-center justify-center px-1 transition-colors hover:text-white">
                 {s}
               </Link>
             ))}
@@ -287,7 +287,7 @@ export function SiteFooter() {
               <ul className="mt-4 space-y-1 text-sm text-white/55">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <Link href="#" className="inline-flex min-h-10 items-center transition-colors hover:text-white">
+                    <Link href="#" className="inline-flex min-h-11 items-center py-2 transition-colors hover:text-white">
                       {link}
                     </Link>
                   </li>
