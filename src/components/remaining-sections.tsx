@@ -131,25 +131,47 @@ export function StepsSection() {
 }
 
 export function PricingSection() {
+  const includes = [
+    "Unlimited Scout conversations",
+    "Warm intros through Sage",
+    "Interview & negotiation coaching",
+    "Salary benchmarks for your market",
+  ];
   return (
     <section id="pricing" className="border-b border-[#12211c]/10 bg-[#fffdf8] py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1280px] overflow-hidden rounded-[32px] border border-[#12211c]/10 bg-[#edf2ed] md:grid-cols-2">
+      <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+        <div className="grid overflow-hidden rounded-[32px] border border-[#12211c]/10 bg-[#edf2ed] shadow-[0_30px_70px_-40px_rgba(18,33,28,0.35)] md:grid-cols-2">
         <div className="p-8 md:p-14">
           <p className="eyebrow text-[#e6653f]">Simple pricing</p>
           <h2 className="display-text mt-5 text-5xl leading-none md:text-7xl">A career agent<br />for <span className="italic">everyone.</span></h2>
           <p className="mt-7 max-w-md text-lg leading-8 text-[#58655f]">
             Scout is completely free for candidates. No trial, no card, no hidden premium tier.
           </p>
+          <ul className="mt-8 space-y-3 text-sm text-[#46534d]">
+            {includes.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#b6d8c8] text-xs font-bold text-[#15382e]" aria-hidden>
+                  ✓
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col justify-between bg-[#e6653f] p-8 text-white md:p-14">
+        <div className="relative flex flex-col justify-between overflow-hidden bg-[#e6653f] p-8 text-white md:p-14">
+          <div
+            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-2xl"
+            aria-hidden
+          />
           <div>
             <p className="eyebrow text-white/70">Your plan</p>
             <p className="display-text mt-4 text-[7rem] leading-none">$0</p>
             <p className="mt-3 text-lg font-semibold">Forever. Really.</p>
           </div>
-          <p className="mt-16 max-w-md border-t border-white/25 pt-6 leading-7 text-white/85">
+          <p className="relative mt-16 max-w-md border-t border-white/25 pt-6 leading-7 text-white/85">
             Companies pay only when they make a great hire through Sage. Your career support stays free.
           </p>
+        </div>
         </div>
       </div>
     </section>
@@ -168,8 +190,8 @@ export function StatsSection() {
         <p className="eyebrow text-[#66716c]">Built at market scale</p>
         <dl className="mt-10 grid border-t border-[#12211c]/15 md:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="border-b border-[#12211c]/15 py-8 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
-              <dt className="display-text text-6xl text-[#12211c] md:text-7xl">{s.value}</dt>
+            <div key={s.label} className="group border-b border-[#12211c]/15 py-8 transition-colors duration-200 hover:bg-[#edf2ed]/50 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
+              <dt className="display-text text-6xl text-[#12211c] transition-colors duration-200 group-hover:text-[#e6653f] md:text-7xl">{s.value}</dt>
               <dd className="mt-3 max-w-[220px] text-sm leading-6 text-[#66716c]">{s.label}</dd>
             </div>
           ))}
@@ -218,22 +240,31 @@ export function DualCtaSection() {
   return (
     <section className="border-b border-[#12211c]/10 bg-[#fffdf8]">
       <div className="mx-auto grid max-w-[1440px] md:grid-cols-2">
-        <div id="signup" className="group min-h-[420px] bg-[#e6653f] p-8 text-white md:p-14">
-          <p className="eyebrow text-white/70">For candidates</p>
-          <h2 className="display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Find work that feels like <span className="italic">you.</span></h2>
+        <div id="signup" className="group relative min-h-[440px] overflow-hidden bg-[#e6653f] p-8 text-white md:p-14">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.12]"
+            style={{
+              backgroundImage: "radial-gradient(circle at 20% 80%, white 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}
+            aria-hidden
+          />
+          <p className="relative eyebrow text-white/70">For candidates</p>
+          <h2 className="relative display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Find work that feels like <span className="italic">you.</span></h2>
           <Link
             href="#"
-            className="button-lift mt-10 inline-flex min-h-14 items-center rounded-full bg-[#fffdf8] px-7 text-sm font-bold text-[#12211c]"
+            className="button-lift relative z-10 mt-10 inline-flex min-h-14 items-center rounded-full bg-[#fffdf8] px-7 text-sm font-bold text-[#12211c]"
           >
             Meet Scout <span className="ml-4 transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
-        <div id="companies" className="group min-h-[420px] bg-[#15382e] p-8 text-[#fffdf8] md:p-14">
-          <p className="eyebrow text-[#b6d8c8]">For companies</p>
-          <h2 className="display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Meet people worth changing your plans for.</h2>
+        <div id="companies" className="group relative min-h-[440px] overflow-hidden bg-[#15382e] p-8 text-[#fffdf8] md:p-14">
+          <div className="pointer-events-none absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-[#b6d8c8]/20 blur-3xl" aria-hidden />
+          <p className="relative eyebrow text-[#b6d8c8]">For companies</p>
+          <h2 className="relative display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Meet people worth changing your plans for.</h2>
           <Link
             href="#"
-            className="button-lift mt-10 inline-flex min-h-14 items-center rounded-full border border-[#b6d8c8]/40 px-7 text-sm font-bold text-[#fffdf8]"
+            className="button-lift relative z-10 mt-10 inline-flex min-h-14 items-center rounded-full border border-[#b6d8c8]/40 px-7 text-sm font-bold text-[#fffdf8]"
           >
             Meet Sage <span className="ml-4 transition-transform group-hover:translate-x-1">→</span>
           </Link>
@@ -265,13 +296,33 @@ export function SiteFooter() {
   return (
     <footer className="bg-[#12211c] py-16 text-[#fffdf8]">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
-        <div className="flex flex-col gap-8 border-b border-white/15 pb-12 md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col gap-8 border-b border-white/15 pb-12 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="display-text text-4xl">Scout &amp; Sage</p>
             <p className="mt-3 max-w-xs text-sm text-white/60">
               Better matches, on both sides of the table.
             </p>
           </div>
+          <form
+            className="flex w-full max-w-md flex-col gap-2 sm:flex-row"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <label htmlFor="footer-email" className="sr-only">
+              Email for product updates
+            </label>
+            <input
+              id="footer-email"
+              type="email"
+              placeholder="Email for career tips"
+              className="min-h-11 flex-1 rounded-full border border-white/20 bg-white/5 px-5 text-sm text-white placeholder:text-white/40 outline-none focus:border-[#b6d8c8]/60"
+            />
+            <button
+              type="submit"
+              className="button-lift min-h-11 rounded-full bg-[#e6653f] px-6 text-sm font-semibold text-white"
+            >
+              Subscribe
+            </button>
+          </form>
           <div className="flex flex-wrap gap-5 text-sm text-white/60">
             {["X", "LinkedIn", "Instagram", "TikTok"].map((s) => (
               <Link key={s} href="#" className="inline-flex min-h-11 min-w-11 items-center justify-center px-1 transition-colors hover:text-white">
