@@ -105,6 +105,71 @@ button:focus-visible {
   }
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-delay-1 {
+  animation-delay: 100ms;
+}
+
+.hero-delay-2 {
+  animation-delay: 190ms;
+}
+
+.hero-delay-3 {
+  animation-delay: 280ms;
+}
+
+.voice-wave > span {
+  animation: wave 1.5s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.voice-wave > span:nth-child(3n + 1) {
+  animation-delay: -0.7s;
+}
+
+.voice-wave > span:nth-child(3n + 2) {
+  animation-delay: -0.3s;
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -14,23 +14,23 @@ export function HeroSection() {
         <div className="relative z-10">
           <Link
             href="#announcement"
-            className="eyebrow inline-flex min-h-11 items-center gap-3 text-[#52635b] transition-colors hover:text-[#12211c]"
+            className="eyebrow hero-rise inline-flex min-h-11 items-center gap-3 text-[#52635b] transition-colors hover:text-[#12211c]"
           >
             <span className="h-2 w-2 rounded-full bg-[#e6653f]" />
             Built for ambitious careers
             <span aria-hidden>↗</span>
           </Link>
 
-          <h1 className="display-text mt-5 max-w-[680px] text-[clamp(4.25rem,8vw,7.75rem)] leading-[0.84] text-[#12211c]">
+          <h1 className="display-text hero-rise hero-delay-1 mt-5 max-w-[680px] text-[clamp(4.25rem,8vw,7.75rem)] leading-[0.84] text-[#12211c]">
             Your next move,
             <span className="block italic text-[#e6653f]">found.</span>
           </h1>
-          <p className="mt-8 max-w-lg text-lg leading-8 text-[#46534d] md:text-xl">
+          <p className="hero-rise hero-delay-2 mt-8 max-w-lg text-lg leading-8 text-[#46534d] md:text-xl">
             Scout searches every corner of the market, learns what matters to
             you, and opens doors to hiring managers before roles get crowded.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="hero-rise hero-delay-3 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#signup"
               className="button-lift inline-flex min-h-14 items-center justify-center rounded-full bg-[#12211c] px-7 text-[15px] font-semibold text-[#fffdf8]"
@@ -45,7 +45,7 @@ export function HeroSection() {
             </Link>
           </div>
 
-          <dl className="mt-12 grid grid-cols-3 gap-4 border-t border-[#12211c]/15 pt-5">
+          <dl className="hero-rise hero-delay-3 mt-12 grid grid-cols-3 gap-4 border-t border-[#12211c]/15 pt-5">
             {perks.map((perk) => (
               <div key={perk.label}>
                 <dt className="text-lg font-bold text-[#12211c] md:text-xl">{perk.value}</dt>
@@ -55,7 +55,7 @@ export function HeroSection() {
           </dl>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[690px]">
+        <div className="hero-rise hero-delay-2 relative mx-auto w-full max-w-[690px]">
           <div className="absolute -left-5 top-16 z-20 hidden -rotate-6 rounded-full bg-[#e6653f] px-5 py-3 text-sm font-bold text-white shadow-xl md:block">
             94% match
           </div>
@@ -78,7 +78,7 @@ export function HeroSection() {
               <p className="display-text mt-4 max-w-lg text-3xl leading-tight sm:text-4xl">
                 “What kind of work would make Monday feel worth it?”
               </p>
-              <div className="mt-8 flex h-12 items-end gap-1.5" aria-hidden="true">
+              <div className="voice-wave mt-8 flex h-12 items-end gap-1.5" aria-hidden="true">
                 {[20, 34, 18, 44, 28, 50, 32, 22, 42, 58, 37, 48, 25, 36, 20, 31, 17, 27].map((height, index) => (
                   <span
                     key={`${height}-${index}`}
