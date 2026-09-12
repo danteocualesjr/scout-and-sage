@@ -9,34 +9,57 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#eee] bg-[#fafafa]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+    <header className="sticky top-0 z-50 border-b border-[#12211c]/10 bg-[#f5f2ea]/92 shadow-[0_1px_0_rgb(18_33_28/0.04)] backdrop-blur-xl supports-[backdrop-filter]:bg-[#f5f2ea]/78">
+      <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-5 md:px-10">
         <Link
           href="/"
-          className="font-serif text-2xl tracking-tight text-[#0a0a0a]"
+          className="display-text group flex min-h-11 items-center gap-2 text-[1.75rem] text-[#12211c]"
         >
-          Scout & Sage
+          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#12211c] text-[11px] font-sans font-bold tracking-normal transition-colors group-hover:bg-[#12211c] group-hover:text-[#f5f2ea]">
+            S·S
+          </span>
+          Scout &amp; Sage
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-[#555] md:flex">
+        <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#46534d] md:flex" aria-label="Main navigation">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-[#0a0a0a]"
+              className="border-b border-transparent py-2 transition-[color,border-color] duration-200 hover:border-[#e6653f] hover:text-[#12211c]"
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4 text-sm">
-          <Link href="#login" className="text-[#555] hover:text-[#0a0a0a]">
+        <div className="ml-auto flex items-center gap-2 text-sm md:ml-0">
+          <details className="group relative md:hidden">
+            <summary className="flex min-h-11 list-none items-center px-3 font-semibold text-[#30453c] marker:content-none">
+              Menu
+              <span className="ml-2 transition-transform duration-200 group-open:rotate-45" aria-hidden>+</span>
+            </summary>
+            <nav
+              aria-label="Mobile navigation"
+              className="absolute right-0 top-12 w-56 overflow-hidden rounded-[18px] border border-[#12211c]/10 bg-[#fffdf8] p-2 shadow-[0_20px_50px_-20px_rgba(18,33,28,0.4)]"
+            >
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex min-h-11 items-center rounded-xl px-4 font-medium text-[#30453c] transition-colors hover:bg-[#edf2ed] hover:text-[#12211c]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </details>
+          <Link href="#login" className="hidden min-h-11 items-center px-3 text-[#46534d] hover:text-[#12211c] sm:flex">
             Log in
           </Link>
           <Link
             href="#signup"
-            className="rounded-full bg-[#0a0a0a] px-4 py-2 font-medium text-white transition-opacity hover:opacity-90"
+            className="button-lift flex min-h-11 items-center rounded-full bg-[#12211c] px-5 font-semibold text-[#fffdf8] ring-1 ring-[#12211c]/10"
           >
-            Sign up
+            Meet Scout <span className="ml-2" aria-hidden>↗</span>
           </Link>
         </div>
       </div>

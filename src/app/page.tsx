@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header";
 import { HeroSection } from "@/components/hero-section";
+import { SocialProofSection } from "@/components/social-proof-section";
 import { FeaturesSection } from "@/components/features-section";
 import {
   WhySection,
@@ -23,6 +24,7 @@ export default function Home() {
       <SiteHeader />
       <main id="main">
         <HeroSection />
+        <SocialProofSection />
         <FeaturesSection />
         <WhySection />
         <StepsSection />
