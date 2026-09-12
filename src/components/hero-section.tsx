@@ -30,7 +30,24 @@ export function HeroSection() {
             you, and opens doors to hiring managers before roles get crowded.
           </p>
 
-          <div className="hero-rise hero-delay-3 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="hero-rise hero-delay-3 mt-8 flex items-center gap-3">
+            <div className="flex -space-x-2" aria-hidden>
+              {["#b6d8c8", "#f4c9b9", "#15382e", "#e6653f"].map((color, i) => (
+                <span
+                  key={color}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#f5f2ea] text-[10px] font-bold text-white"
+                  style={{ backgroundColor: color, zIndex: 4 - i }}
+                >
+                  {["AK", "JR", "LM", "TS"][i]}
+                </span>
+              ))}
+            </div>
+            <p className="text-sm text-[#58655f]">
+              <span className="font-semibold text-[#12211c]">2,400+</span> professionals matched this week
+            </p>
+          </div>
+
+          <div className="hero-rise hero-delay-3 mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#signup"
               className="button-lift inline-flex min-h-14 items-center justify-center rounded-full bg-[#12211c] px-7 text-[15px] font-semibold text-[#fffdf8]"

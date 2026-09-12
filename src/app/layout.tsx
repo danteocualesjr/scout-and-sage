@@ -25,8 +25,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${dmSans.variable} ${instrumentSerif.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[#fafafa] text-[#0a0a0a]">
+      <body
+        className="flex min-h-full flex-col bg-[#f5f2ea] text-[#12211c]"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
