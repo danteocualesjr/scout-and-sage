@@ -177,11 +177,11 @@ export function FeaturesSection() {
           </h2>
         </div>
 
-        <div className="mt-14 flex gap-3 overflow-x-auto pb-4">
+        <div className="mt-14 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
           {jobs.map((job) => (
             <article
               key={job.title}
-              className="group min-w-[280px] shrink-0 border-l border-[#12211c]/15 px-5 py-2 first:border-l-0 first:pl-0"
+              className="group min-w-[280px] shrink-0 snap-start rounded-[22px] border border-[#12211c]/10 bg-[#edf2ed]/60 p-5 transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-1 hover:bg-[#edf2ed] hover:shadow-[0_18px_40px_-24px_rgba(18,33,28,0.35)]"
             >
               <p className="eyebrow text-[#66716c]">94% match</p>
               <h3 className="mt-3 text-lg font-bold text-[#12211c]">{job.title}</h3>
@@ -202,7 +202,7 @@ export function FeaturesSection() {
                 <h3 className="display-text mt-4 text-4xl leading-tight text-[#12211c] md:text-5xl">{item.title}</h3>
                 <p className="mt-5 max-w-lg text-base leading-7 text-[#58655f] md:text-lg md:leading-8">{item.body}</p>
               </div>
-              <div className="rounded-[32px] bg-[#edf2ed] p-4 sm:p-8">
+              <div className="rounded-[32px] bg-[#edf2ed] p-4 ring-1 ring-[#12211c]/5 sm:p-8">
                 <FeaturePanel type={item.panel} />
               </div>
             </div>
