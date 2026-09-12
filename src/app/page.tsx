@@ -22,7 +22,7 @@ export default function Home() {
         Skip to main content
       </a>
       <SiteHeader />
-      <main id="main">
+      <main id="main" className="flex-1">
         <HeroSection />
         <SocialProofSection />
         <FeaturesSection />

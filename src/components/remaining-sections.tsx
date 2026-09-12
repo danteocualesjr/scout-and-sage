@@ -179,9 +179,17 @@ export function PricingSection() {
             <p className="display-text mt-4 text-[7rem] leading-none">$0</p>
             <p className="mt-3 text-lg font-semibold">Forever. Really.</p>
           </div>
-          <p className="relative mt-16 max-w-md border-t border-white/25 pt-6 leading-7 text-white/85">
-            Companies pay only when they make a great hire through Sage. Your career support stays free.
-          </p>
+          <div className="relative mt-10 space-y-6 border-t border-white/25 pt-6">
+            <p className="max-w-md leading-7 text-white/85">
+              Companies pay only when they make a great hire through Sage. Your career support stays free.
+            </p>
+            <Link
+              href="#signup"
+              className="button-lift inline-flex min-h-12 items-center rounded-full bg-white px-6 text-sm font-bold text-[#e6653f]"
+            >
+              Get started free <span className="ml-3" aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
         </div>
       </div>
@@ -201,7 +209,7 @@ export function StatsSection() {
         <p className="eyebrow text-[#66716c]">Built at market scale</p>
         <dl className="mt-10 grid rounded-[28px] border border-[#12211c]/10 bg-[#fffdf8]/80 md:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="group border-b border-[#12211c]/15 py-8 transition-colors duration-200 hover:bg-[#edf2ed]/50 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
+            <div key={s.label} className="group border-b border-[#12211c]/15 px-5 py-8 transition-colors duration-200 hover:bg-[#edf2ed]/50 md:border-b-0 md:border-r md:px-10 md:first:pl-8 md:last:border-r-0 md:last:pr-8">
               <dt className="display-text text-6xl text-[#12211c] transition-colors duration-200 group-hover:text-[#e6653f] md:text-7xl">{s.value}</dt>
               <dd className="mt-3 max-w-[220px] text-sm leading-6 text-[#66716c]">{s.label}</dd>
             </div>
@@ -217,9 +225,12 @@ export function FaqSection() {
   return (
     <section className="border-b border-[#12211c]/10 bg-[#f5f2ea] py-24 md:py-32">
       <div className="mx-auto grid max-w-[1280px] gap-12 px-5 md:grid-cols-[0.65fr_1.35fr] md:px-10">
-        <div>
+        <div className="md:sticky md:top-28 md:self-start">
           <p className="eyebrow text-[#e6653f]">Good questions</p>
           <h2 className="display-text mt-4 text-5xl md:text-7xl">Before you ask Scout.</h2>
+          <p className="mt-6 max-w-sm text-base leading-7 text-[#58655f]">
+            Straight answers on privacy, timing, and how Scout differs from job boards.
+          </p>
         </div>
         <ul className="border-t border-[#12211c]/15">
           {faqs.map((item, i) => {
@@ -264,9 +275,13 @@ export function DualCtaSection() {
           />
           <p className="relative eyebrow text-white/70">For candidates</p>
           <h2 className="relative display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Find work that feels like <span className="italic">you.</span></h2>
+          <ul className="relative mt-6 space-y-2 text-sm text-white/85">
+            <li>• 10-minute onboarding call</li>
+            <li>• Matches in minutes, not weeks</li>
+          </ul>
           <Link
             href="#"
-            className="button-lift relative z-10 mt-10 inline-flex min-h-14 items-center rounded-full bg-[#fffdf8] px-7 text-sm font-bold text-[#12211c]"
+            className="button-lift relative z-10 mt-8 inline-flex min-h-14 items-center rounded-full bg-[#fffdf8] px-7 text-sm font-bold text-[#12211c]"
           >
             Meet Scout <span className="ml-4 transition-transform group-hover:translate-x-1">→</span>
           </Link>
@@ -275,9 +290,13 @@ export function DualCtaSection() {
           <div className="pointer-events-none absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-[#b6d8c8]/20 blur-3xl" aria-hidden />
           <p className="relative eyebrow text-[#b6d8c8]">For companies</p>
           <h2 className="relative display-text mt-6 max-w-lg text-5xl leading-[0.98] md:text-7xl">Meet people worth changing your plans for.</h2>
+          <ul className="relative mt-6 space-y-2 text-sm text-[#cfe0d7]">
+            <li>• Pre-vetted warm introductions</li>
+            <li>• Pay only when you hire</li>
+          </ul>
           <Link
             href="#"
-            className="button-lift relative z-10 mt-10 inline-flex min-h-14 items-center rounded-full border border-[#b6d8c8]/40 px-7 text-sm font-bold text-[#fffdf8]"
+            className="button-lift relative z-10 mt-8 inline-flex min-h-14 items-center rounded-full border border-[#b6d8c8]/40 px-7 text-sm font-bold text-[#fffdf8]"
           >
             Meet Sage <span className="ml-4 transition-transform group-hover:translate-x-1">→</span>
           </Link>
