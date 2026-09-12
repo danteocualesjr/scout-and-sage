@@ -10,6 +10,7 @@ export function HeroSection() {
   return (
     <section id="candidates" className="paper-grid relative overflow-hidden border-b border-[#12211c]/10 bg-[#f5f2ea]">
       <div className="pointer-events-none absolute -right-28 top-24 h-72 w-72 rounded-full bg-[#b6d8c8]/50 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-16 h-64 w-64 rounded-full bg-[#f4c9b9]/35 blur-3xl" />
       <div className="mx-auto grid min-h-[calc(100svh-72px)] max-w-[1280px] items-center gap-12 px-5 py-14 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-20">
         <div className="relative z-10">
           <Link
@@ -56,7 +57,7 @@ export function HeroSection() {
             </Link>
             <Link
               href="#companies"
-              className="inline-flex min-h-14 items-center justify-center px-6 text-[15px] font-semibold text-[#30453c] underline decoration-[#e6653f]/40 underline-offset-4 transition-colors hover:text-[#e6653f]"
+              className="button-lift inline-flex min-h-14 items-center justify-center rounded-full border border-[#12211c]/12 bg-[#fffdf8]/70 px-7 text-[15px] font-semibold text-[#30453c] transition-colors hover:border-[#e6653f]/35 hover:text-[#12211c]"
             >
               Hiring? Meet Sage
             </Link>
@@ -73,10 +74,10 @@ export function HeroSection() {
         </div>
 
         <div className="hero-rise hero-delay-2 relative mx-auto w-full max-w-[690px]">
-          <div className="absolute -top-5 left-8 z-20 hidden -rotate-6 rounded-full bg-[#e6653f] px-5 py-3 text-sm font-bold text-white shadow-xl md:block">
+          <div className="absolute -top-4 left-4 z-20 -rotate-6 rounded-full bg-[#e6653f] px-4 py-2 text-xs font-bold text-white shadow-xl sm:left-8 sm:px-5 sm:py-3 sm:text-sm">
             94% match
           </div>
-          <div className="overflow-hidden rounded-[30px] border border-[#12211c]/15 bg-[#fffdf8] shadow-[0_35px_80px_-25px_rgba(18,33,28,0.28)]">
+          <div className="overflow-hidden rounded-[30px] border border-[#12211c]/15 bg-[#fffdf8] shadow-[0_35px_80px_-25px_rgba(18,33,28,0.28)] transition-transform duration-500 lg:hover:-rotate-1 lg:hover:scale-[1.01]">
             <div className="flex items-center justify-between border-b border-[#12211c]/10 px-5 py-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#15382e] text-xs font-bold text-white">SC</div>
