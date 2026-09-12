@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Scout & Sage: AI Hiring for Fast-Growing Companies",
   description:
     "Scout is an AI agent that finds your next job and helps you land it. Sage helps companies hire through warm introductions.",
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f2ea" },
     { media: "(prefers-color-scheme: dark)", color: "#15382e" },
