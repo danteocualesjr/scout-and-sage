@@ -67,8 +67,17 @@ const steps = [
 
 export function WhySection() {
   return (
-    <section id="about" className="overflow-hidden border-b border-[#fffdf8]/10 bg-[#15382e] py-24 text-[#fffdf8] md:py-36">
-      <div className="mx-auto grid max-w-[1280px] gap-12 px-5 md:grid-cols-[0.65fr_1.35fr] md:px-10">
+    <section id="about" className="relative overflow-hidden border-b border-[#fffdf8]/10 bg-[#15382e] py-24 text-[#fffdf8] md:py-36">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #b6d8c8 1px, transparent 1px), linear-gradient(to bottom, #b6d8c8 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+        aria-hidden
+      />
+      <div className="relative mx-auto grid max-w-[1280px] gap-12 px-5 md:grid-cols-[0.65fr_1.35fr] md:px-10">
         <div>
           <p className="eyebrow text-[#b6d8c8]">Why we built Scout</p>
           <div className="mt-8 flex items-center gap-3 text-sm text-[#cfe0d7]">
@@ -105,12 +114,14 @@ export function StepsSection() {
         <ol className="mt-16 border-t border-[#12211c]/15">
           {steps.map((step, i) => (
             <li key={step.title} className="group grid gap-4 border-b border-[#12211c]/15 py-7 md:grid-cols-[100px_0.9fr_1.1fr] md:items-center md:py-9">
-              <span className="display-text text-3xl italic text-[#e6653f]">0{i + 1}</span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#e6653f]/30 bg-[#fffdf8] font-serif text-lg italic text-[#e6653f] shadow-sm transition-colors duration-200 group-hover:border-[#e6653f] group-hover:bg-[#f7e8e1]">
+                0{i + 1}
+              </span>
               <h3 className="text-xl font-bold text-[#12211c] transition-transform duration-200 group-hover:translate-x-1">{step.title}</h3>
               <p className="max-w-xl text-base leading-7 text-[#66716c]">{step.body}</p>
             </li>
           ))}
-          <li className="flex flex-col items-start justify-between gap-7 border-b border-[#12211c]/15 py-10 md:flex-row md:items-center">
+          <li className="flex flex-col items-start justify-between gap-7 rounded-[24px] border border-[#12211c]/10 bg-[#fffdf8] px-6 py-10 md:flex-row md:items-center md:px-8">
             <div>
               <h3 className="display-text text-3xl">Ready to see your first matches?</h3>
               <p className="mt-2 text-base text-[#66716c]">
@@ -185,10 +196,10 @@ export function StatsSection() {
     { value: "40hrs", label: "Saved on average vs traditional job searching" },
   ];
   return (
-    <section className="border-b border-[#12211c]/10 bg-[#fffdf8] py-20 md:py-28">
+    <section className="border-b border-[#12211c]/10 bg-gradient-to-b from-[#fffdf8] to-[#edf2ed]/40 py-20 md:py-28">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <p className="eyebrow text-[#66716c]">Built at market scale</p>
-        <dl className="mt-10 grid border-t border-[#12211c]/15 md:grid-cols-3">
+        <dl className="mt-10 grid rounded-[28px] border border-[#12211c]/10 bg-[#fffdf8]/80 md:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label} className="group border-b border-[#12211c]/15 py-8 transition-colors duration-200 hover:bg-[#edf2ed]/50 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
               <dt className="display-text text-6xl text-[#12211c] transition-colors duration-200 group-hover:text-[#e6653f] md:text-7xl">{s.value}</dt>
@@ -214,18 +225,20 @@ export function FaqSection() {
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (
-              <li key={item.q}>
+              <li key={item.q} className={isOpen ? "rounded-2xl bg-[#fffdf8] px-4 shadow-[0_12px_40px_-28px_rgba(18,33,28,0.35)] ring-1 ring-[#12211c]/8" : ""}>
                 <button
                   type="button"
-                  className="flex min-h-16 w-full items-center justify-between gap-4 border-b border-[#12211c]/15 py-5 text-left text-base font-bold text-[#12211c]"
+                  className={`flex min-h-16 w-full items-center justify-between gap-4 py-5 text-left text-base font-bold text-[#12211c] ${isOpen ? "" : "border-b border-[#12211c]/15"}`}
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
                 >
                   {item.q}
-                  <span className="display-text text-3xl text-[#e6653f]">{isOpen ? "−" : "+"}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#edf2ed] font-serif text-2xl text-[#e6653f]">
+                    {isOpen ? "−" : "+"}
+                  </span>
                 </button>
                 {isOpen && (
-                  <p className="border-b border-[#12211c]/15 pb-6 pr-10 text-base leading-7 text-[#58655f]">{item.a}</p>
+                  <p className="border-t border-[#12211c]/10 pb-6 pr-4 pt-4 text-base leading-7 text-[#58655f] md:pr-10">{item.a}</p>
                 )}
               </li>
             );
@@ -303,32 +316,38 @@ export function SiteFooter() {
               Better matches, on both sides of the table.
             </p>
           </div>
-          <form
-            className="flex w-full max-w-md flex-col gap-2 sm:flex-row"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <label htmlFor="footer-email" className="sr-only">
-              Email for product updates
-            </label>
-            <input
-              id="footer-email"
-              type="email"
-              placeholder="Email for career tips"
-              className="min-h-11 flex-1 rounded-full border border-white/20 bg-white/5 px-5 text-sm text-white placeholder:text-white/40 outline-none focus:border-[#b6d8c8]/60"
-            />
-            <button
-              type="submit"
-              className="button-lift min-h-11 rounded-full bg-[#e6653f] px-6 text-sm font-semibold text-white"
+          <div className="flex w-full max-w-lg flex-col gap-6 md:items-end">
+            <form
+              className="flex w-full flex-col gap-2 sm:flex-row"
+              onSubmit={(e) => e.preventDefault()}
             >
-              Subscribe
-            </button>
-          </form>
-          <div className="flex flex-wrap gap-5 text-sm text-white/60">
-            {["X", "LinkedIn", "Instagram", "TikTok"].map((s) => (
-              <Link key={s} href="#" className="inline-flex min-h-11 min-w-11 items-center justify-center px-1 transition-colors hover:text-white">
-                {s}
-              </Link>
-            ))}
+              <label htmlFor="footer-email" className="sr-only">
+                Email for product updates
+              </label>
+              <input
+                id="footer-email"
+                type="email"
+                placeholder="Email for career tips"
+                className="min-h-11 flex-1 rounded-full border border-white/20 bg-white/5 px-5 text-sm text-white placeholder:text-white/40 outline-none focus:border-[#b6d8c8]/60"
+              />
+              <button
+                type="submit"
+                className="button-lift min-h-11 rounded-full bg-[#e6653f] px-6 text-sm font-semibold text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+            <div className="flex flex-wrap gap-3 text-sm text-white/60">
+              {["X", "LinkedIn", "Instagram", "TikTok"].map((s) => (
+                <Link
+                  key={s}
+                  href="#"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-white/10 px-3 transition-colors hover:border-white/25 hover:text-white"
+                >
+                  {s}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">

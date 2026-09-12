@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Scout & Sage: AI Hiring for Fast-Growing Companies",
   description:
     "Scout is an AI agent that finds your next job and helps you land it. Sage helps companies hire through warm introductions.",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f2ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#15382e" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
