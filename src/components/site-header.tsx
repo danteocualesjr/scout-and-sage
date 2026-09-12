@@ -31,7 +31,27 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2 text-sm">
+        <div className="ml-auto flex items-center gap-2 text-sm md:ml-0">
+          <details className="group relative md:hidden">
+            <summary className="flex min-h-11 list-none items-center px-3 font-semibold text-[#30453c] marker:content-none">
+              Menu
+              <span className="ml-2 transition-transform duration-200 group-open:rotate-45" aria-hidden>+</span>
+            </summary>
+            <nav
+              aria-label="Mobile navigation"
+              className="absolute right-0 top-12 w-56 overflow-hidden rounded-[18px] border border-[#12211c]/10 bg-[#fffdf8] p-2 shadow-[0_20px_50px_-20px_rgba(18,33,28,0.4)]"
+            >
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex min-h-11 items-center rounded-xl px-4 font-medium text-[#30453c] transition-colors hover:bg-[#edf2ed] hover:text-[#12211c]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </details>
           <Link href="#login" className="hidden min-h-11 items-center px-3 text-[#46534d] hover:text-[#12211c] sm:flex">
             Log in
           </Link>
