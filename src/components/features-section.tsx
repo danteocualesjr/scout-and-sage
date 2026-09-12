@@ -171,7 +171,10 @@ export function FeaturesSection() {
     <section className="border-b border-[#12211c]/10 bg-[#fffdf8] py-24 md:py-32">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-          <p className="eyebrow text-[#e6653f]">Scout works while you live</p>
+          <div className="flex items-start gap-4">
+            <span className="mt-1 hidden h-16 w-px bg-[#e6653f]/50 md:block" aria-hidden />
+            <p className="eyebrow text-[#e6653f]">Scout works while you live</p>
+          </div>
           <h2 className="display-text max-w-3xl text-5xl leading-[0.98] text-[#12211c] md:text-7xl">
             The unfair advantage in your job search.
           </h2>
@@ -183,7 +186,9 @@ export function FeaturesSection() {
               key={job.title}
               className="group min-w-[280px] shrink-0 snap-start rounded-[22px] border border-[#12211c]/10 bg-[#edf2ed]/60 p-5 transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-1 hover:bg-[#edf2ed] hover:shadow-[0_18px_40px_-24px_rgba(18,33,28,0.35)]"
             >
-              <p className="eyebrow text-[#66716c]">94% match</p>
+              <p className="eyebrow bg-gradient-to-r from-[#e6653f] to-[#15382e] bg-clip-text text-transparent">
+                94% match
+              </p>
               <h3 className="mt-3 text-lg font-bold text-[#12211c]">{job.title}</h3>
               <p className="mt-2 text-sm text-[#66716c]">{job.meta}</p>
               <p className="mt-4 text-xs font-semibold text-[#e6653f]">{job.tag} <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></p>

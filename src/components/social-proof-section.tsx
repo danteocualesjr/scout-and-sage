@@ -22,9 +22,14 @@ export function SocialProofSection() {
               <span
                 key={`${company}-${index}`}
                 aria-hidden={index >= companies.length}
-                className="mx-10 whitespace-nowrap font-serif text-2xl text-[#35463f]/70 md:mx-16 md:text-3xl"
+                className="mx-8 flex items-center gap-8 whitespace-nowrap md:mx-12"
               >
-                {company}
+                <span className="font-serif text-2xl text-[#35463f]/70 transition-colors duration-200 hover:text-[#12211c] md:text-3xl">
+                  {company}
+                </span>
+                <span className="text-[#12211c]/15" aria-hidden>
+                  ◆
+                </span>
               </span>
             ))}
           </div>
@@ -39,7 +44,7 @@ export function SocialProofSection() {
         ].map((chip) => (
           <div
             key={chip.label}
-            className="rounded-full border border-[#12211c]/10 bg-[#edf2ed] px-5 py-2.5 text-center"
+            className="rounded-full border border-[#12211c]/10 bg-[#edf2ed] px-5 py-2.5 text-center shadow-[0_8px_24px_-18px_rgba(18,33,28,0.45)] transition-transform duration-200 hover:-translate-y-0.5"
           >
             <p className="text-sm font-bold text-[#12211c]">{chip.value}</p>
             <p className="text-[11px] text-[#66716c]">{chip.label}</p>

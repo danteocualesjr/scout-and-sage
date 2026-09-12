@@ -162,7 +162,7 @@ button:focus-visible {
 }
 
 .marquee-track {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
   width: max-content;
 }
 
