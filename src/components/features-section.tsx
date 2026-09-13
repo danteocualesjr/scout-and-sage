@@ -64,7 +64,7 @@ const showcases = [
 function FeaturePanel({ type }: { type: string }) {
   if (type === "jobs") {
     return (
-      <div className="space-y-3 rounded-[24px] border border-[#12211c]/10 bg-[#fffdf8] p-5 shadow-[0_24px_60px_-38px_rgba(18,33,28,0.45)]">
+      <div className="space-y-3 rounded-[24px] border border-[#12211c]/10 bg-[#fffdf8] p-5 shadow-[0_24px_60px_-38px_rgba(18,33,28,0.45)] transition-transform duration-300 hover:scale-[1.01]">
         <div className="flex items-center justify-between">
           <p className="eyebrow text-[#66716c]">Today’s matches</p>
           <span className="rounded-full bg-[#f7e8e1] px-3 py-1 text-xs font-bold text-[#ad4f33]">7 new</span>
@@ -177,7 +177,7 @@ export function FeaturesSection() {
         <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div className="flex items-start gap-4">
             <span className="mt-1 hidden h-16 w-px bg-[#e6653f]/50 md:block" aria-hidden />
-            <p className="eyebrow text-[#e6653f]">Scout works while you live</p>
+            <p className="section-kicker eyebrow text-[#e6653f]">Scout works while you live</p>
           </div>
           <h2 className="display-text max-w-3xl text-5xl leading-[0.98] text-[#12211c] md:text-7xl">
             The unfair advantage in your job search.

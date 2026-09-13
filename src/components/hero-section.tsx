@@ -132,7 +132,7 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-8 -right-4 hidden max-w-[220px] animate-[float_5s_ease-in-out_infinite] rounded-[20px] border border-[#12211c]/10 bg-[#fffdf8] p-4 shadow-xl md:block">
+          <div className="absolute -bottom-6 right-2 max-w-[220px] animate-[float_5s_ease-in-out_infinite] rounded-[20px] border border-[#12211c]/10 bg-[#fffdf8] p-4 shadow-xl sm:-bottom-8 sm:-right-4">
             <p className="eyebrow text-[#66716c]">New introduction</p>
             <p className="mt-2 text-sm font-bold">Founding Engineer</p>
             <p className="mt-1 text-xs text-[#66716c]">Series A · Remote · $220k</p>

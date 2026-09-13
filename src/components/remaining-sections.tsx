@@ -133,7 +133,7 @@ export function StepsSection() {
               <p className="max-w-xl text-base leading-7 text-[#66716c]">{step.body}</p>
             </li>
           ))}
-          <li className="flex flex-col items-start justify-between gap-7 rounded-[24px] border border-[#12211c]/10 bg-[#fffdf8] px-6 py-10 md:flex-row md:items-center md:px-8">
+          <li className="surface-card flex flex-col items-start justify-between gap-7 rounded-[24px] px-6 py-10 md:flex-row md:items-center md:px-8">
             <div>
               <h3 className="display-text text-3xl">Ready to see your first matches?</h3>
               <p className="mt-2 text-base text-[#66716c]">
@@ -244,7 +244,7 @@ export function FaqSection() {
     <section className="border-b border-[#12211c]/10 bg-[#f5f2ea] py-24 md:py-32">
       <div className="mx-auto grid max-w-[1280px] gap-12 px-5 md:grid-cols-[0.65fr_1.35fr] md:px-10">
         <div className="md:sticky md:top-28 md:self-start">
-          <p className="eyebrow text-[#e6653f]">Good questions</p>
+          <p className="section-kicker eyebrow text-[#e6653f]">Good questions</p>
           <h2 className="display-text mt-4 text-5xl md:text-7xl">Before you ask Scout.</h2>
           <p className="mt-6 max-w-sm text-base leading-7 text-[#58655f]">
             Straight answers on privacy, timing, and how Scout differs from job boards.
@@ -344,7 +344,8 @@ export function SiteFooter() {
     },
   ];
   return (
-    <footer className="bg-[#12211c] py-16 text-[#fffdf8]">
+    <footer className="relative bg-[#12211c] py-16 text-[#fffdf8]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#e6653f]/70 to-transparent" aria-hidden />
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="flex flex-col gap-8 border-b border-white/15 pb-12 md:flex-row md:items-end md:justify-between">
           <div>
