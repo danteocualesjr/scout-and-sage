@@ -19,12 +19,12 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-5 md:px-10">
         <Link
           href="/"
-          className="display-text group flex min-h-11 items-center gap-2 text-[1.75rem] text-[#12211c]"
+          className="display-text group flex min-h-11 max-w-[11rem] items-center gap-2 text-[1.5rem] text-[#12211c] sm:max-w-none sm:text-[1.75rem]"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#12211c] text-[11px] font-sans font-bold tracking-normal transition-colors group-hover:bg-[#12211c] group-hover:text-[#f5f2ea]">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#12211c] text-[11px] font-sans font-bold tracking-normal transition-colors group-hover:bg-[#12211c] group-hover:text-[#f5f2ea]">
             S·S
           </span>
-          Scout &amp; Sage
+          <span className="truncate sm:overflow-visible">Scout &amp; Sage</span>
         </Link>
         <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#46534d] md:flex" aria-label="Main navigation">
           {nav.map((item) => (

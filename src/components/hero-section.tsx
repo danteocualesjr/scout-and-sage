@@ -15,14 +15,15 @@ export function HeroSection() {
         <div className="relative z-10">
           <Link
             href="#announcement"
-            className="eyebrow hero-rise inline-flex min-h-11 items-center gap-3 text-[#52635b] transition-colors hover:text-[#12211c]"
+            id="announcement"
+            className="eyebrow hero-rise surface-card inline-flex min-h-11 items-center gap-3 rounded-full px-4 py-2 text-[#52635b] transition-[color,box-shadow] hover:text-[#12211c] hover:shadow-[0_14px_36px_-24px_rgba(18,33,28,0.45)]"
           >
-            <span className="h-2 w-2 rounded-full bg-[#e6653f]" />
+            <span className="h-2 w-2 rounded-full bg-[#e6653f] shadow-[0_0_0_4px_rgba(230,101,63,0.15)]" />
             Built for ambitious careers
             <span aria-hidden>↗</span>
           </Link>
 
-          <h1 className="display-text hero-rise hero-delay-1 mt-5 max-w-[680px] text-[clamp(4.25rem,8vw,7.75rem)] leading-[0.84] text-[#12211c]">
+          <h1 className="display-text hero-rise hero-delay-1 mt-5 max-w-[680px] text-balance text-[clamp(4.25rem,8vw,7.75rem)] leading-[0.84] text-[#12211c]">
             Your next move,
             <span className="block italic text-[#e6653f]">found.</span>
           </h1>
