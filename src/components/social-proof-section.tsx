@@ -9,9 +9,9 @@ const companies = [
 
 export function SocialProofSection() {
   return (
-    <section className="overflow-hidden border-b border-[#12211c]/10 bg-[#fffdf8]">
+    <section className="overflow-hidden border-b border-[#12211c]/10 bg-[#fffdf8] pt-2">
       <div className="border-b border-[#12211c]/10 py-6">
-        <p className="eyebrow mb-5 text-center text-[#66716c]">
+        <p className="section-kicker eyebrow mx-auto mb-5 w-fit text-[#66716c]">
           Talent from teams shaping what’s next
         </p>
         <div className="relative overflow-hidden">

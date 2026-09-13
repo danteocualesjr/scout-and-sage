@@ -95,6 +95,18 @@ export function WhySection() {
           <blockquote className="display-text mt-12 border-l border-[#e6653f] pl-6 text-3xl italic text-[#b6d8c8]">
             “Less applying. More choosing.”
           </blockquote>
+          <dl className="mt-14 grid gap-4 sm:grid-cols-3">
+            {[
+              { value: "82%", label: "skip the application pile" },
+              { value: "2.4×", label: "faster to first interview" },
+              { value: "91%", label: "would recommend Scout" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-[#b6d8c8]/25 bg-[#1a4237]/60 px-4 py-5">
+                <dt className="display-text text-4xl text-[#fffdf8]">{item.value}</dt>
+                <dd className="mt-2 text-sm leading-6 text-[#b6d8c8]">{item.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
@@ -106,7 +118,7 @@ export function StepsSection() {
     <section className="border-b border-[#12211c]/10 bg-[#f5f2ea] py-24 md:py-32">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="grid gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-end">
-          <p className="eyebrow text-[#e6653f]">How it works</p>
+          <p className="section-kicker eyebrow text-[#e6653f]">How it works</p>
           <h2 className="display-text text-5xl leading-none md:text-7xl">
             One conversation.<br /><span className="italic text-[#e6653f]">Five smart moves.</span>
           </h2>
@@ -153,7 +165,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="grid overflow-hidden rounded-[32px] border border-[#12211c]/10 bg-[#edf2ed] shadow-[0_30px_70px_-40px_rgba(18,33,28,0.35)] md:grid-cols-2">
         <div className="p-8 md:p-14">
-          <p className="eyebrow text-[#e6653f]">Simple pricing</p>
+          <p className="section-kicker eyebrow text-[#e6653f]">Simple pricing</p>
           <h2 className="display-text mt-5 text-5xl leading-none md:text-7xl">A career agent<br />for <span className="italic">everyone.</span></h2>
           <p className="mt-7 max-w-md text-lg leading-8 text-[#58655f]">
             Scout is completely free for candidates. No trial, no card, no hidden premium tier.
@@ -168,6 +180,12 @@ export function PricingSection() {
               </li>
             ))}
           </ul>
+          <Link
+            href="#signup"
+            className="button-lift mt-10 inline-flex min-h-12 items-center rounded-full border border-[#12211c]/15 bg-[#fffdf8] px-6 text-sm font-bold text-[#12211c]"
+          >
+            Create free account <span className="ml-3" aria-hidden>→</span>
+          </Link>
         </div>
         <div className="relative flex flex-col justify-between overflow-hidden bg-[#e6653f] p-8 text-white md:p-14">
           <div
